@@ -1,0 +1,15 @@
+<div class="container">
+    <h3>업데이트</h3>
+    <form action="/updateOne/<%= post._id%>?_method=PUT" method="POST" class="form-control">
+        <div class="mb-3">
+            <label for="title" class="form-label mt-5">제목</label>
+            <input type="text" class="form-control" id="title" name="title" value="<%=post.title %>">
+          </div>
+          <div class="mb-3">
+            <label for="content" class="form-label">내용</label>
+            <textarea class="form-control" id="content" name="content" rows="10"><%= post.content %></textarea>
+          </div>
+          <input type="submit" class="btn btn-success btn-lg" value="수정하기">
+          <a href="/main" class="btn btn-danger btn-lg">목록보기</a>
+    </form>
+</div>

@@ -1,0 +1,27 @@
+<div class="container mt-3 align-items-center">
+    <h1>전체게시글 보기</h1>
+    <a href="/writePost" class="btn btn-danger btn-lg">게시글 쓰러가기</a>
+    <table class="table mt-5">
+        <tr>
+            <th style="width:20%">작성일</th>
+            <th style="width:60%">제목</th>
+            <th style="width:20%">수정/삭제</th>
+        </tr>
+        <% post.forEach(posts=>{ %>
+            <tr>
+                <td><%= posts.createdTime.toLocaleString() %></td>
+                <td class="h5">
+                    <a href="/showOne/<%= posts._id%>">
+                        <%= posts.title%>
+                    </a>
+                </td>
+                <td>
+                    <a href="/updateOne/<%=posts._id %>" class="btn btn-success btn-sm mb-2">수정</a>
+                    <form action="deleteOne/<%= posts._id %>?_method=DELETE" method="POST">
+                        <input type="submit" value="삭제" class="btn btn-danger btn-sm">
+                    </form>
+                </td>
+            </tr>
+        <% })%>
+    </table>
+</div>

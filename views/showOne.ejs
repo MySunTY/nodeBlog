@@ -1,0 +1,17 @@
+<div class="container mt-3">
+    <h1>선택된 게시글 보기</h1>
+    <table class="table">
+        <tr>
+            <th style="width:20%">제목</th>
+            <th style="width:60%">내용</th>
+            <th style="width:20%">등록일</th>
+        </tr>
+        <tr class="h3">
+            <td><%= post.title %></td>
+            <td><%= post.content %></td>
+            <td><%= post.createdTime.toLocaleString() %></td>
+        </tr>
+    </table>
+    <a href="/showPost" class="btn btn-success btn-lg">전체 게시글 목록보기</a>
+    <a href="/updateOne/<%= post._id%>" class="btn btn-danger btn-lg">게시글 수정하기</a>
+</div>
